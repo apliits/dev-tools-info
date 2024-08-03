@@ -14,9 +14,18 @@ git config --edit --global user.name
 git config --unset --global user.name
 git config --unset-all --local user.name -> if multiple user names are there.
 
-Note: global/local attributes can use as per requirements
-
 Config user details
 -------------------------
 git config --global --user.name = "your name"
 git config --global --user.email "your@email.com"
+
+Clone/Status
+--------------------------
+git clone repo_url
+git status
+
+
+Information
+  global: global level config, applicable for all repos
+  local: local level config specific to repo 
+  remote: github repo else local repo
