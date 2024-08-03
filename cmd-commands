@@ -1,0 +1,12 @@
+Commonly used terminal commands
+----------------------------------
+----------------------------------
+
+ls -> list out the dir/files
+ls -a -> list out all hidden/non-hidden dir/files
+
+cd dir-name -> change directory
+cd .. -> go to previous directory
+mkdir dir-name -> create new directory
+clear -> clear the console
+
