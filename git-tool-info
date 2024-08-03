@@ -2,7 +2,7 @@ Configuration Commands
 -----------------------
 -----------------------
 
-Show/Add/Update/Unset any field
+config commands 
 -----------------------
 git config --list
 git config --list --show-origin
@@ -14,8 +14,6 @@ git config --edit --global user.name
 git config --unset --global user.name
 git config --unset-all --local user.name -> if multiple user names are there.
 
-Config user details
--------------------------
 git config --global --user.name = "your name"
 git config --global --user.email "your@email.com"
 
@@ -23,9 +21,91 @@ Clone/Status
 --------------------------
 git clone repo_url
 git status
+git diff file_path
+
+Code changes commands
+--------------------------
+git add file_name -> adds new or changed files in your working directory to the Git staging area
+git add . -> add all modified/new files
+git commit -m "specific-commit-message" -> it is the record of change
+git push origin main -> upload local repo content to remote repo
+
+Local Repo to Origin repo
+------------------------
+git init -> to initialize/create git repo on local 
+git add .
+git commit -m "initial msg"
+  create repo on github with same name and copy repo url
+git remote add origin repo_url -> to set the remote origin
+git remote -v -> to verify remote
+git push origin main
+git push -u origin main -> -u -> to set default upstream, git push every time will push changes to main branch
+git push origin branch_name -> can push changes on specific branch
+
+Git Branch
+----------------------------
+git branch -> to check current repo branch
+git branch -M new_branch_name -> to rename the branch name
+git checkout branch_name -> navigate to another branch
+git checkout -b new_branch -> create new branch, make changes and can push changes to specific branch name created in local work dir, will create on remote as well
+git branch -d branch_name => delete branch
+
+Merging Code
+--------------------------------
+git diff branch_name => to compare commits, branches, files and more
+git merge branch_name => to merge two branches
+or
+create Pull Request on GitHub => It lets you tell about changes you've pushed to a branch in a repository on GitHub.
+
+Pull Code Changes in Local
+------------------------------
+git pull origin main => used to fetch and download content from a remote repo and immediately update the local repo to match that content
+
+Resolving Merge Conflicts
+-----------------------------
+git merge another_branch
+    select one of the option showing on page 
+    or
+    remove unwanted lines from code - added to show the changes by github
+    update the code changes which want to keep
+    merge the code
+push the code changes
+
+
+Undoing Changes
+------------------------------
+Case 1: Staged changes
+  git reset file_name
+  git reset => reset all changes
+
+Case 2: Committed changes (for one commit)
+  git reset HEAD~1
+
+Case 3: committed changes (for many commits)
+  git reset commit_hash
+  git reset --hard commit_hash
+
+Check logs
+-------------------------------
+get log => check all commits
+
+Fork
+------------------------------
+Make a copy of another repository from somebody's account or own in ownself github account
+    
+
 
 
 Information
   global: global level config, applicable for all repos
   local: local level config specific to repo 
   remote: github repo else local repo
+  .git file: to track all local changes
+  untracked files: new files that git doesn't track yet, need to add changes
+  modified: changed, need to add changes
+  staged: file is ready to be committed, after added and before committed
+  unmodified: unchanged/alredy committed
+  your branch is ahead of 'origin/main' by * commits: -> code changes are committed in local working repo but are not pushed yet on remote repo.
+  origin main: remote repository, main is branch name
+  merge conflict: An event takes place that github unable to automatically resolve differences in code between two commits.
+  fork => A fork is a new repository that shares code and visibility settings with the original "upstream" repository. / Fork is a rough copy. 
