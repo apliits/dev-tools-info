@@ -29,6 +29,7 @@ git add file_name -> adds new or changed files in your working directory to the 
 git add . -> add all modified/new files
 git commit -m "specific-commit-message" -> it is the record of change
 git push origin main -> upload local repo content to remote repo
+git push --force origin branch => Do this if you know 100% that your local changes should be pushed to the remote
 
 Local Repo to Origin repo
 ------------------------
